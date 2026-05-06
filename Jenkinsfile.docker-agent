@@ -4,7 +4,7 @@ pipeline {
             image 'node:lts-alpine'
             // On mappe le port 3000 pour l'accès web
             // On mappe un dossier de l'hôte vers le cache npm du conteneur
-            args '-p 3000:3000 -v $HOME/.npm:/root/.npm'
+            args '-p 3000:3000 -u root:root -v $HOME/.npm:/root/.npm'
         }
     }
     environment {
